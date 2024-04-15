@@ -1,0 +1,33 @@
+<html lang="en">
+    <center>
+    <body>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+        <div class="edit content">
+            <form action="/home/<%= locals.theId %>?_method=PATCH" method="POST">
+                <br>
+                <br>
+                <br>
+                <br>
+                <label>Edit User Data:</br>
+                    <br>
+                    <label>Email:
+                        <input type="text" name="email" value="<%= locals.Email %>" style="width:50%;" required>
+                    </label>
+                    <br>
+                    <label>First Name:
+                        <input type="text" name="FirstName" value="<%= locals.FirstName %>" style="width:50%;" required>
+                    </label>
+                    <br>
+                    <label>Last and Middle Name:
+                        <input type="text" name="LastName" value="<%= locals.LastName %>" style="width:50%;" required>
+                    </label>
+                    <br>
+                    
+                    <br>
+                </label></br>
+                <button>PATCH</button>
+            </form>
+        </div>
+    </body>
+</center>
+</html>

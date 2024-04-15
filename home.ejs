@@ -1,0 +1,50 @@
+<html lang="en">
+    <center>
+  <body>
+    <h1>FullStack JS QAP 3</h1>
+    <h2>Add, Edit and Delete User Data</h2>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/picnic">
+    <div class="People content">
+        <form action="/home" method="POST">
+
+        </br><label>Add Users:</label></br>
+        <br>
+
+        <label>Email:
+            <input type="email" id="Email" name="Email" value="<%= locals.Email %>" style="width:50%;" required>
+            <br>
+        </label>
+        <label>First Name:
+            <input type="text" id="FirstName" name="FirstName" value="<%= locals.FirstName %>" style="width:50%;" required>
+            <br>
+        </label>
+        <label>Last and Middle Name:
+            <input type="text" id="LastName" name="LastName" value="<%= locals.LastName %>" style="width:50%;" required>
+            <br>
+        </label>
+        
+
+            <button>POST</button>  
+
+            <br>
+            
+            
+            <b>Users: </b></br> 
+        
+        <% if (thePeople.length > 0) { %>
+            <% thePeople.forEach(person => { %>
+                <b><%= person.FirstName %>  <%= person.LastName %> | <%= person.email %></b>
+                <a href="/home/<%=person._id%>/edit?FirstName=<%=person.FirstName%>&LastName=<%=person.LastName%>&Email=<%=person.Email%>">edit</a>
+                <a href="/home/<%=person._id%>/delete?FirstName=<%=person.FirstName%>">delete</a></br> 
+                <% }) %>
+        <% } %>
+
+
+        </br>
+    </hr>
+  
+        
+    </form>
+  </body>
+</center>
+</html>
